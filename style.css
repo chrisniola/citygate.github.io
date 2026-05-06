@@ -1,0 +1,260 @@
+
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f6f9;
+}
+
+/* HEADER */
+.header{
+display:flex;
+align-items:center;
+gap:20px;
+padding:20px;
+background:#0b1f3a;
+color:white;
+}
+
+.logo-animate{
+width:120px;
+height:120px;
+border-radius:50%;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.header-text{
+flex:1;
+text-align:center;
+}
+
+/* NAV */
+nav{
+background:#102a4d;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+padding:80px;
+text-align:center;
+background:#1e4a7a;
+color:white;
+}
+
+/* GALLERY */
+.gallery-advanced{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+padding:20px;
+}
+
+.card{
+position:relative;
+height:250px;
+overflow:hidden;
+border-radius:12px;
+}
+
+.card img{
+width:100%;
+height:100%;
+object-fit:cover;
+animation:zoomMove 6s infinite alternate;
+}
+
+@keyframes zoomMove{
+0%{transform:scale(1);}
+100%{transform:scale(1.1);}
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background:rgba(0,0,0,0.6);
+color:white;
+padding:10px;
+}
+
+/* FIX 1: safer text animation (prevents mobile glitch) */
+.overlay p{
+white-space:nowrap;
+overflow:hidden;
+border-right:2px solid white;
+width:100%;
+max-width:100%;
+animation:typing 6s steps(40,end) infinite, blink 0.7s infinite;
+}
+
+@keyframes typing{
+0%{width:0;}
+40%{width:100%;}
+60%{width:100%;}
+100%{width:0;}
+}
+
+@keyframes blink{
+50%{border-color:white;}
+}
+
+/* CONTACT */
+.section{
+text-align:center;
+padding:50px;
+
+/* FIX 2: prevent overlap issues */
+position:relative;
+z-index:1;
+}
+
+.contact-box input,
+.contact-box textarea{
+width:80%;
+padding:10px;
+margin:10px auto;
+display:block;
+
+/* FIX 3: ensure clickable inputs */
+position:relative;
+z-index:2;
+}
+
+button{
+padding:10px 20px;
+background:#1e4a7a;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* RESULT PAGE */
+.container{
+max-width:850px;
+margin:20px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+.result-header{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.result-logo{
+width:70px;
+}
+
+.passport-circle{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #1e4a7a;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:6px;
+font-size:12px;
+}
+
+/* SIGNATURE */
+.signature-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:20px;
+}
+
+.sign-img{
+width:100px;
+}
+
+.qr-box{
+text-align:center;
+}
+
+.button-group{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:20px;
+}
+
+/* PRINT */
+@media print{
+body{font-size:11px;}
+
+#login-section,.button-group{
+display:none;
+}
+
+.container{
+margin:0;
+padding:10px;
+}
+
+.passport-circle{
+width:90px;
+height:90px;
+}
+
+.result-logo{
+width:50px;
+}
+
+table{
+font-size:10px;
+}
+
+@page{
+size:A4;
+margin:10mm;
+}
+}
+
+/* MOBILE FIXED */
+@media(max-width:768px){
+
+.gallery-advanced{
+grid-template-columns:1fr;
+}
+
+.card{
+height:200px;
+}
+
+.logo-animate{
+width:80px;
+height:80px;
+}
+
+/* FIX 4: table overflow safety */
+table{
+display:block;
+overflow-x:auto;
+}
+
+}
