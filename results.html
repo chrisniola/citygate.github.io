@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Checker</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="result-header">
+    <img src="logo.png" class="result-logo">
+    <div class="school-title">
+        <h1>City Gates Legacy College</h1>
+        <p>Demus Excellentia</p>
+    </div>
+</div>
+
+<div id="login-section">
+    <h2>Student Result Checker</h2>
+
+    <input type="text" id="regNo" placeholder="Enter Registration Number">
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button onclick="checkResult()">Login</button>
+
+    <p id="error-message"></p>
+</div>
+
+<div id="result-section" style="display:none;">
+
+<div style="text-align:center;">
+<img id="passport" class="passport-circle">
+</div>
+
+<h2 id="student-name" style="text-align:center;"></h2>
+<h4 id="student-regno" style="text-align:center;"></h4>
+
+<table>
+<thead>
+<tr>
+<th>Subject</th>
+<th>1st</th>
+<th>2nd</th>
+<th>Exam</th>
+<th>Total</th>
+<th>Avg</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody id="result-table"></tbody>
+</table>
+
+<div style="text-align:center;">
+<h3 id="grand-total"></h3>
+<h3 id="average-score"></h3>
+<p><b>SS1 First Term Results</b></p>
+</div>
+
+<div class="signature-container">
+
+<div class="signature-box">
+<img src="sign2.jpeg" class="sign-img">
+<div class="line"></div>
+<p>Form Teacher</p>
+</div>
+
+<div class="qr-box">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://yourwebsite.com">
+<p>Scan to verify</p>
+</div>
+
+<div class="signature-box">
+<img src="sign1.jpeg" class="sign-img">
+<div class="line"></div>
+<p>Proprietor</p>
+</div>
+
+</div>
+
+<div class="button-group">
+<button onclick="printResult()">Print</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="result.js"></script>
+
+</body>
+</html>
